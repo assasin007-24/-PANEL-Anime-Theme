@@ -20,14 +20,14 @@ installTheme(){
     apt install sudo -y > /dev/null 2>&1
     cd /var/www/ > /dev/null 2>&1
     echo -e "${GREEN}Unpack the themebackup...${RESET}"
-    tar -cvf Pterodactyl_Nightcore_Themebackup.tar.gz pterodactyl > /dev/null 2>&1
+    tar -cvf -PANEL-Anime-Theme.tar.gz pterodactyl > /dev/null 2>&1
     echo -e "${GREEN}Installing theme... ${RESET}"
     cd /var/www/pterodactyl > /dev/null 2>&1
     echo -e "${GREEN}Removing old theme if exist${RESET}"
-    rm -r Pterodactyl_Nightcore_Theme > /dev/null 2>&1
+    rm -r -PANEL-Anime-Theme > /dev/null 2>&1
     echo -e "${GREEN}Download the Theme${RESET}"
-    git clone https://github.com/NoPro200/Pterodactyl_Nightcore_Theme.git > /dev/null 2>&1
-    cd Pterodactyl_Nightcore_Theme > /dev/null 2>&1
+    git clone https://github.com/assasin007-24/-PANEL-Anime-Theme.git > /dev/null 2>&1
+    cd -PANEL-Anime-Theme > /dev/null 2>&1
     echo -e "${GREEN}Removing old theme resources if exist${RESET}"
     rm /var/www/pterodactyl/resources/scripts/Pterodactyl_Nightcore_Theme.css > /dev/null 2>&1
     rm /var/www/pterodactyl/resources/scripts/index.tsx > /dev/null 2>&1
@@ -79,20 +79,20 @@ installThemeQuestion(){
 }
 
 repair(){
-    bash <(curl https://raw.githubusercontent.com/NoPro200/Pterodactyl_Nightcore_Theme/main/repair.sh)
+    bash <(curl https://raw.githubusercontent.com/assasin007-24/-PANEL-Anime-Theme/main/repair.sh)
 }
 
 restoreBackUp(){
     echo "Restoring backup..."
     cd /var/www/ > /dev/null 2>&1
-    tar -xvf Pterodactyl_Nightcore_Themebackup.tar.gz > /dev/null 2>&1
-    rm Pterodactyl_Nightcore_Themebackup.tar.gz > /dev/null 2>&1
+    tar -xvf -PANEL-Anime-Theme.tar.gz > /dev/null 2>&1
+    rm -PANEL-Anime-Theme.tar.gz > /dev/null 2>&1
 
     cd /var/www/pterodactyl > /dev/null 2>&1
     yarn build:production > /dev/null 2>&1
     sudo php artisan optimize:clear > /dev/null 2>&1
 }
-echo "Copyright (c) 2024 Angelillo15 and NoPro200"
+echo "Copyright (c) 2024 Angelillo15 and NoPro200 and assasin007-24"
 echo "This program is free software: you can redistribute it and/or modify"
 echo ""
 echo ""
